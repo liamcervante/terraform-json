@@ -42,6 +42,10 @@ type Plan struct {
 	// this plan.
 	PlannedValues *StateValues `json:"planned_values,omitempty"`
 
+	// The change operations for resources and data sources that changed
+	// externally since the last state update.
+	ResourceDrift []*ResourceChange `json:"resource_drift,omitempty"`
+
 	// The change operations for resources and data sources within this
 	// plan.
 	ResourceChanges []*ResourceChange `json:"resource_changes,omitempty"`
